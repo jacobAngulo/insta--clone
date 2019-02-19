@@ -63,12 +63,13 @@ html {
 }
 
 .app-header {
+  border-bottom: 1px solid #E6E6E6;
   align-items: center;
   height: 76px;
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background: orangered;
+  background: #FFFFFF;
   margin-bottom: 60px;
 }
 

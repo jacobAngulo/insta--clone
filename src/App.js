@@ -13,29 +13,18 @@ class App extends Component {
       data: data
     }
   }
-
-  addComment = (e, post, comment) => {
-    e.preventDefault();
-    const newComment = {
-      username: 'jakey',
-      text: comment
-    }
-    post.comments = [...post.comments, newComment];
-  }
-
   render() {
     return (
       <div className="App">
         <SearchBar />
         <section>
-        {this.state.data.map((post) => {
-          return (
-            <PostContainer
-            addComment={this.addComment}
-            post={post}
-            />
-          )
-        })}
+          {this.state.data.map((post) => {
+            return (
+              <PostContainer
+              post={post}
+              />
+            )
+          })}
       </section>
       </div>
     );
