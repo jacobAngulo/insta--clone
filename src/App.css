@@ -129,6 +129,11 @@ html {
   font-weight: 500;
 }
 
+.post-elapsed-time {
+  margin-bottom: 8px;
+  font-weight: 10;
+}
+
 .post-comment-section {
   display: flex;
   flex-direction: column;

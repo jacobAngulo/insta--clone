@@ -1,4 +1,5 @@
 import React from 'react';
+import ElapsedTime from './ElapsedTime'
 
 class CommentSection extends React.Component {
     constructor(props) {
@@ -40,6 +41,9 @@ class CommentSection extends React.Component {
                     )
                 })}
                 </ul>
+                <ElapsedTime 
+                    post={this.props.post}
+                />
                 <form onSubmit={this.handleSubmit}>
                     <input 
                         name='input'

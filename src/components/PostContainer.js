@@ -1,10 +1,7 @@
 import React from 'react'
 import CommentSection from './CommentSection'
 
-class PostContainer extends React.Component {
-    constructor(props) {
-        super(props)
-    }    
+class PostContainer extends React.Component {    
     render() {
         return (
             <div key={this.props.post.id} className='post'>
