@@ -6,8 +6,14 @@ class CommentSection extends React.Component {
         super(props);
         this.state = {
             input: '',
-            comments: this.props.post.comments
+            comments: []
         }
+    }
+
+    componentDidMount() {
+        this.setState({
+            comments: this.props.post.comments
+        })
     }
 
     handleChanges = e => {
@@ -42,7 +48,7 @@ class CommentSection extends React.Component {
                 })}
                 </ul>
                 <ElapsedTime 
-                    post={this.props.post}
+                    timestamp={this.props.post.timestamp}
                 />
                 <form onSubmit={this.handleSubmit}>
                     <input 

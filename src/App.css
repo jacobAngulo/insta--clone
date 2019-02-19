@@ -123,15 +123,34 @@ html {
   padding: 0 16px;
 }
 
+.post-likes-section {
+  width: 100%;
+  justify-content: space-between;
+  display: flex;
+}
+
 .post-likes {
   height: 24px;
   margin-bottom: 8px;
   font-weight: 500;
 }
 
-.post-elapsed-time {
-  margin-bottom: 8px;
-  font-weight: 10;
+
+.post-likes-section button {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 20px;
+  height: 25px;
+  width: 25px;
+}
+
+.post-like-btn {
+  color: lightgrey;
+}
+
+.liked {
+  color: red;
 }
 
 .post-comment-section {
@@ -146,4 +165,9 @@ html {
 
 .post-comment strong {
   font-weight: 600;
+}
+
+.post-elapsed-time {
+  margin-bottom: 8px;
+  font-weight: 10;
 }
