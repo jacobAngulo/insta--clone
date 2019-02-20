@@ -25,7 +25,7 @@ class CommentSection extends React.Component {
     handleSubmit = e => {
         e.preventDefault();
         const newComment = {
-            username: 'jakey',
+            username: this.props.username,
             text: this.state.input
         }
         this.setState({

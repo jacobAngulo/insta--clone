@@ -56,6 +56,7 @@ class PostContainer extends React.Component {
                         </button>
                     </form>
                     <CommentSection
+                    username={this.props.username}
                     post = {this.props.post}
                     />
                 </footer>

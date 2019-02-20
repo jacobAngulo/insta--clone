@@ -23,6 +23,11 @@ class SearchBar extends React.Component {
         })
     }
 
+    handleLogOut = () => {
+        localStorage.removeItem('user');
+        window.location.reload();    
+    }
+
     render() {
         return (
             <header className='app-header'>
@@ -39,9 +44,9 @@ class SearchBar extends React.Component {
                     />
                 </form> 
                 <nav>
-                    <a>explore</a>
                     <a>activity</a>
                     <a>profile</a>
+                    <button onClick={this.handleLogOut}>log out</button>
                 </nav>
             </header>
         )

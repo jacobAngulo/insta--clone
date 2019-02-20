@@ -1,52 +1,35 @@
-import React, { Component } from 'react';
-import SearchBar from './components/SearchBar'
-import PostContainer from './components/PostContainer'
+import React from 'react';
+import HomePage from './components/HomePage';
+import LogInPage from './components/LogInPage'
 import './App.css';
-import dummyData from './DummyData';
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      data: []
+const Display = (props) => {
+    if(localStorage.getItem("user")) {
+        return (
+            <HomePage />
+        )
     }
-  }
-
-  componentDidMount() {
-    this.setState({
-      data: dummyData
-    })
-  }
-
-  handleSearch = (e, search) => {
-    e.preventDefault();
-    this.setState({
-      data: dummyData
-    })
-    const searchedState = dummyData.slice().filter(post => post.username.includes(search));
-    this.setState({
-      data: searchedState
-    })
-  }
-
-  render() {
     return (
-      <div className="App">
-        <SearchBar 
-        handleSearch={this.handleSearch}
+        <LogInPage 
+        login={props.login}
         />
-        <section>
-          {this.state.data.map((post) => {
-            return (
-              <PostContainer
-              post={post}
-              />
-            )
-          })}
-      </section>
-      </div>
-    );
-  }
+    )
 }
 
-export default App;
+class App extends React.Component {
+    login = (e, un, pw) => {
+        e.preventDefault();
+        localStorage.setItem("user", un);
+        window.location.reload();    
+    }
+
+    render() {
+        return (
+            <Display 
+            login={this.login}
+            />
+        )    
+    }
+}
+
+export default App
