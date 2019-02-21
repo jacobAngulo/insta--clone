@@ -1,5 +1,6 @@
 import React from 'react';
-import Logo from '../ig-logo.png'
+import Logo from '../SearchBar/ig-logo.png'
+import { TweenMax } from 'gsap'
 
 class SearchBar extends React.Component {
     constructor(props) {
@@ -7,6 +8,17 @@ class SearchBar extends React.Component {
         this.state = {
             search: ''
         }
+    }
+
+    componentDidMount() {
+        const appHeader = document.querySelector('.app-header')
+        window.addEventListener('scroll', () => {
+            if(window.pageYOffset > 100) {
+                TweenMax.to(appHeader, .1, {height: 50})
+            } else if(window.pageYOffset < 100) {
+                TweenMax.to(appHeader, .1, {height: 76})
+            }
+        })
     }
 
     handleChanges = e => {
@@ -30,7 +42,8 @@ class SearchBar extends React.Component {
 
     render() {
         return (
-            <header className='app-header'>
+            <header
+            className='app-header'>
                 <img src={Logo}/>
                 <form
                     onSubmit={this.handleSubmit}

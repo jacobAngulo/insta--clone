@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import SearchBar from './SearchBar'
-import PostContainer from './PostContainer'
+import SearchBar from './postPageComponents/SearchBar/SearchBar'
+import PostContainer from './postPageComponents/PostContainer'
 import dummyData from '../DummyData';
 
 class HomePage extends Component {
   constructor() {
     super();
     this.state = {
-      data: []
+      data: [],
     }
   }
 
@@ -30,11 +30,13 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="App">
+      <div 
+      className="App"
+      >
         <SearchBar 
         handleSearch={this.handleSearch}
         />
-        <section>
+        <section className='posts-section'>
           {this.state.data.map((post) => {
             return (
               <PostContainer

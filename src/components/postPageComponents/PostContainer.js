@@ -1,5 +1,5 @@
 import React from 'react'
-import CommentSection from './CommentSection'
+import CommentSection from '../commentSection/CommentSection'
 
 class PostContainer extends React.Component {    
     constructor(props) {
