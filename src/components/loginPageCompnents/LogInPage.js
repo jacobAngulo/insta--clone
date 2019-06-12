@@ -65,7 +65,7 @@ class LogInPage extends React.Component {
   render() {
     return (
       <StyledForm onSubmit={this.handleLoginSubmit}>
-        <StyledImg src={require("../../assets/logo.png")} />
+        <StyledImg src={require("../../assets/logo-name.png")} />
         <StyledInput
           name="username"
           type="text"
